@@ -6,16 +6,23 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
-		try {
+		try {			
+			//Instaciar objeto loader do tipo FXMLLoader para manipular tela antes de carregar e seta caminho da View
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
-			Parent parent = loader.load();
-			Scene mainScene = new Scene(parent);
+			ScrollPane scrollpane = loader.load();
+			
+			//Comandos para ajustar barra de MenuBar na tela
+			scrollpane.setFitToHeight(true);
+			scrollpane.setFitToWidth(true);
+			
+			Scene mainScene = new Scene(scrollpane);
 			primaryStage.setScene(mainScene);
 			primaryStage.setTitle("Sample JavaFX application");
 			primaryStage.show();
