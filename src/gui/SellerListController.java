@@ -106,8 +106,7 @@ public class SellerListController implements Initializable, DataChangeListener {
 		initRemoveButtons();
 	}
 
-	private void createDialogForm(Seller obj, String absoluteName, Stage parentStage) {
-		
+	private void createDialogForm(Seller obj, String absoluteName, Stage parentStage) {		
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
